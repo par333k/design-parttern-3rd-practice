@@ -1,9 +1,3 @@
-/*
-- Transform data using streams
-- Data taken from https://www.kaggle.com/jboysen/london-crime/
-- Columns: lsoa_code,borough,major_category,minor_category,value,year,month
-- Data ommited for brevity
-*/
 import { createReadStream } from 'fs'
 import { parse } from "csv-parse"
 import { Transform, PassThrough, pipeline } from "stream"
