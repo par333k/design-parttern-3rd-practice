@@ -2,12 +2,12 @@ import { createReadStream } from 'fs';
 import net from 'net';
 import { pipeline } from 'stream';
 import path from 'path';
-import { createCipheriv } from 'crypto'
+import { createCipheriv, randomBytes } from 'crypto'
 
 const filePath = process.argv[2]
 const filename = path.basename(filePath);
 const secret = Buffer.from(process.argv[3], 'hex')
-const iv = 'asdasdasdasdasda'
+const iv = randomBytes(16)
 
 const client = net.createConnection({ port: 3000 }, () => {
     console.log('Connection listener');
